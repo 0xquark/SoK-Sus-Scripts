@@ -10,7 +10,9 @@ syncUp() {
     sleep $delta
 }
 
-qdbus org.kde.kate-`pidof kate` /MainApplication org.kde.Kate.Application.openUrl file:///katemainwindow.cpp utf-8
+# gets window id of the kate and stores it in window_id
+window_id=$(wmctrl -l | awk '/katemainwindow.cpp  — Kate/ {print strtonum($1)}')
+xdotool windowactivate "$window_id"
 syncUp 5
 
 # go to line 100
