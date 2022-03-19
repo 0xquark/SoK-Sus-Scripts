@@ -314,19 +314,31 @@ syncUp 5
 
 echo " lowercase "
 # lowercase
-xdotool key Ctrl+Shift+u
+xdotool key Ctrl+semicolon # custom
 syncUp 5
 
 echo " Standby 30 sec "
 syncUp 30
 
-echo " Normal User "
+echo " close "
+# close
+xdotool key Ctrl+w
+syncUp 1
+
+echo " Discard the current file "
+# dont save
+xdotool key "Tab"
+syncUp 1
+xdotool key Return
+
+echo "***********Normal User*********** "
 
 echo " Create New file "
 # new file
 xdotool key Ctrl+n
 syncUp 5
 
+echo " Type lorem ipsum "
 # type lorem ipsum
 xdotool type "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
 xdotool key Return
@@ -344,8 +356,154 @@ xdotool type "clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolo
 xdotool key Return
 syncUp 3
 
-xdotool key Ctrl+S
+echo " Increase font size "
+# inc font size
+xdotool key Ctrl+plus
 syncUp 1
-xdotool type "somefile.txt"
+# inc font size
+xdotool key Ctrl+plus
+syncUp 5
+
+echo " Type lorem ipsum  "
+# Type lorem ipsum
+xdotool type "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
 xdotool key Return
+syncUp 3
+xdotool type "aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata"
+xdotool key Return
+syncUp 3
+
+echo " Decrease font size "
+# dec font size
+xdotool key Ctrl+minus
+syncUp 1
+# dec font size
+xdotool key Ctrl+minus
+syncUp 5
+
+echo " Go to line 3"
+# go to line 100
+xdotool key Ctrl+g
+xdotool type "3"
+xdotool key Return
+syncUp 5
+
+echo " Select 2 lines "
+# Select 2 lines
+xdotool keydown Shift
+xdotool key Down
+xdotool key Down
+xdotool keyup Shift
+syncUp 1
+
+echo " Delete "
+# Delete
+xdotool key BackSpace
+syncUp 10
+
+echo " Undo "
+# undo
+xdotool key Ctrl+z
+syncUp 5
+
+echo " redo "
+# redo 
+xdotool key Ctrl+Shift+z
+syncUp 5
+
+# Enter full screen mode
+echo " Enter and Exit Full screen mode "
+xdotool key F11
+syncUp 5
+xdotool key F11
+syncUp 5
+
+# Save file 
+echo " Save file "
+xdotool key Ctrl+S
+syncUp 2
+xdotool type "somefile.txt"
+syncUp 2
+xdotool key Return
+syncUp 5
+
+echo " **********Lite Mode******** "
+
+echo " Create New file "
+# new file
+xdotool key Ctrl+n
+syncUp 5
+
+echo " Type lorem ipsum "
+# type lorem ipsum
+xdotool type "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
+xdotool key Return
+syncUp 3
+xdotool type "aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata"
+xdotool key Return
+syncUp 3
+xdotool type "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
+xdotool key Return
+syncUp 3
+xdotool type "invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet"
+xdotool key Return
+syncUp 3
+xdotool type "clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
+xdotool key Return 
+syncUp 3
+
+echo " Go to line 1"
+# go to line 100
+xdotool key Ctrl+g
+xdotool type "1"
+xdotool key Return
+syncUp 5
+
+echo " Select 2 lines "
+# Select 2 lines
+xdotool keydown Shift
+xdotool key Down
+xdotool key Down
+xdotool keyup Shift
+syncUp 1
+
+echo " Delete "
+# Delete
+xdotool key BackSpace
+syncUp 10
+
+echo " Type lorem ipsum "
+# type text
+xdotool type "invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet"
+xdotool key Return
+syncUp 3
+xdotool type "clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
+xdotool key Return 
+syncUp 3
+
+echo " standby 1 min "
+syncUp 60
+
+echo " close "
+# close
+xdotool key Ctrl+w
+syncUp 1
+
+echo " Discard the current file "
+# dont save
+xdotool key "Tab"
+syncUp 1
+xdotool key Return
+
+echo " Quit Kate "
+xdotool key Ctrl+Q
+syncUp 1
+xdotool key ISO_Left_Tab
+syncUp 1
+xdotool key Return 
+
+
+
+
+
 
