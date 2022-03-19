@@ -10,17 +10,20 @@ syncUp() {
     sleep $delta
 }
 
+echo "Started"
 # gets window id of the kate and stores it in window_id
 window_id=$(wmctrl -l | awk '/katemainwindow.cpp  — Kate/ {print strtonum($1)}')
 xdotool windowactivate "$window_id"
 syncUp 5
 
+echo " Go to line 100"
 # go to line 100
 xdotool key Ctrl+g
 xdotool type "100"
 xdotool key Return
 syncUp 5
 
+echo " Toggle Comment"
 # toggle comment
 xdotool key Ctrl+slash
 syncUp 1
@@ -38,9 +41,10 @@ syncUp 1
 xdotool key Ctrl+slash
 syncUp 1
 
+echo " Find KConfig and Move between searches"
 # find KConfig
 xdotool key Ctrl+f
-syncUp 1
+syncUp 5
 xdotool type "KConfig"
 syncUp 1
 
@@ -67,16 +71,19 @@ syncUp 1
 # close find bar
 xdotool key Escape
 
-# replace
+# replace 
+# standby time 
+echo " Standby "
+syncUp 30
 
-syncUp 10
-
+echo " Go to line 200 "
 # go to line 200
 xdotool key Ctrl+g
 xdotool type "200"
 xdotool key Return
 syncUp 5
 
+echo " Select ten lines"
 # select 10 lines
 xdotool keydown Shift
 xdotool key Down
@@ -92,10 +99,12 @@ xdotool key Down
 xdotool keyup Shift
 syncUp 1
 
+echo " Delete "
 # delete
 xdotool key BackSpace
-syncUp 5
+syncUp 10
 
+echo " Go 5 lines down "
 # go 5 lines down
 xdotool key Down
 xdotool key Down
@@ -104,10 +113,12 @@ xdotool key Down
 xdotool key Down
 syncUp 1
 
+echo " delete "
 # delete line
 xdotool key Ctrl+k
-syncUp 5
+syncUp 10
 
+echo " undo "
 # undo
 xdotool key Ctrl+z
 syncUp 1
@@ -115,10 +126,12 @@ syncUp 1
 xdotool key Ctrl+z
 syncUp 1
  
+echo " redo "
 # redo
 xdotool key Ctrl+Shift+z
 syncUp 5
 
+echo " Increase font size "
 # inc font size
 xdotool key Ctrl+plus
 syncUp 1
@@ -127,6 +140,7 @@ syncUp 1
 xdotool key Ctrl+plus
 syncUp 5
 
+echo " Toggle Folding "
 # toggle folding 4x
 xdotool key Ctrl+Shift+k # custom
 syncUp 1
@@ -137,6 +151,7 @@ syncUp 1
 xdotool key Ctrl+Shift+k # custom
 syncUp 5
 
+echo " Decrease Font Size "
 # dec font size
 xdotool key Ctrl+minus
 syncUp 1
@@ -145,19 +160,36 @@ syncUp 1
 xdotool key Ctrl+minus
 syncUp 5
 
+# Enter full screen mode
+echo " Enter and Exit Full screen mode "
+xdotool key F11
+syncUp 5
+xdotool key F11
+syncUp 5
+
+echo " Print Preview "
 # print preview
 xdotool key Ctrl+Shift+p # custom
 syncUp 5
 xdotool key Escape
 
+echo " Set Bookmark "
+# set Bookmark
+xdotool key Down
+xdotool key Down
+xdotool key Ctrl+b
+syncUp 3
+
+echo " Go 5 lines down "
 # go 5 lines down
 xdotool key Down
 xdotool key Down
 xdotool key Down
 xdotool key Down
 xdotool key Down
-syncUp 1
+syncUp 3
 
+echo " Select 10 lines "
 # select 10 lines
 xdotool keydown Shift
 xdotool key Down
@@ -171,37 +203,48 @@ xdotool key Down
 xdotool key Down
 xdotool key Down
 xdotool keyup Shift
-syncUp 1
+syncUp 3
 
+echo " Cut "
 # cut
 xdotool key Ctrl+x
-syncUp 1
+syncUp 5
 
+echo " Standby 30 sec "
+syncUp 30
+
+echo " Go 5 lines down "
 # go 5 lines down
 xdotool key Down
 xdotool key Down
 xdotool key Down
 xdotool key Down
 xdotool key Down
-syncUp 1
+syncUp 3
 
+echo " Paste "
 # paste
 xdotool key Ctrl+v
 syncUp 5
 
+
+echo " close "
 # close
 xdotool key Ctrl+w
 syncUp 1
 
+echo " Discard the current file "
 # dont save
 xdotool key "Tab"
 syncUp 1
 xdotool key Return
-
+		
+echo " Create New file "
 # new file
 xdotool key Ctrl+n
 syncUp 5
 
+echo " Type lorem ipsum "
 # type lorem ipsum
 xdotool type "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
 xdotool key Return
@@ -218,26 +261,68 @@ syncUp 3
 xdotool type "clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
 syncUp 3
 
+echo " Enable Spell checking "
+#enable spell checking 
+xdotool key Ctrl+Shift+O
+syncUp 5
+
+echo " Toggle line numbers "
 # toggle line numbers
 xdotool key Ctrl+Shift+n # custom
 syncUp 5
 
+echo " Go to the begining of the line "
 # select to beginning of line
 xdotool key Shift+Home
 syncUp 1
 
+echo " Change font "
+#change font 
+xdotool key ctrl+shift+comma
+syncUp 1
+xdotool key Tab
+xdotool key Tab
+xdotool key Tab
+xdotool key Tab
+xdotool key Return
+syncUp 1
+xdotool key ISO_Left_Tab
+xdotool key ISO_Left_Tab
+xdotool key ISO_Left_Tab
+xdotool key Down
+xdotool key Down
+xdotool key Return
+syncUp 2
+xdotool key ISO_Left_Tab
+xdotool key Return
+syncUp 5
+
+echo " Disable Spell checking "
+# Disable Spell checking 
+xdotool key Ctrl+Shift+O
+syncUp 5
+
+echo " Uppercase "
 # uppercase
 xdotool key Ctrl+u
 syncUp 1
 
+echo " Toggle line numbers "
 # toggle line numbers
 xdotool key Ctrl+Shift+n # custom
 syncUp 5
 
+echo " lowercase "
 # lowercase
 xdotool key Ctrl+Shift+u
 syncUp 5
 
+echo " Standby 30 sec "
+syncUp 30
+
+echo " Normal User "
+
+echo " Create New file "
 # new file
 xdotool key Ctrl+n
 syncUp 5
