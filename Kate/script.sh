@@ -14,6 +14,7 @@ echo "Started"
 # gets window id of the kate and stores it in window_id
 window_id=$(wmctrl -l | awk '/katemainwindow.cpp  — Kate/ {print strtonum($1)}')
 xdotool windowactivate "$window_id"
+syncUp 60
 syncUp 5
 
 echo " Go to line 100"
@@ -501,10 +502,11 @@ echo " Discard the current file "
 xdotool key "Tab"
 syncUp 1
 xdotool key Return
+syncUp 2
 
 echo " Quit Kate "
 xdotool key Ctrl+Q
-syncUp 1
+syncUp 2
 xdotool key ISO_Left_Tab
 syncUp 1
 xdotool key Return 
