@@ -44,9 +44,9 @@ syncUp 1
 echo " Find KConfig and Move between searches"
 # find KConfig
 xdotool key Ctrl+f
-syncUp 5
+syncUp 3
 xdotool type "KConfig"
-syncUp 1
+syncUp 2
 
 # next
 xdotool key F3
@@ -97,7 +97,7 @@ xdotool key Down
 xdotool key Down
 xdotool key Down
 xdotool keyup Shift
-syncUp 1
+syncUp 3
 
 echo " Delete "
 # delete
@@ -111,7 +111,7 @@ xdotool key Down
 xdotool key Down
 xdotool key Down
 xdotool key Down
-syncUp 1
+syncUp 2
 
 echo " delete "
 # delete line
@@ -121,10 +121,10 @@ syncUp 10
 echo " undo "
 # undo
 xdotool key Ctrl+z
-syncUp 1
+syncUp 2
 # undo
 xdotool key Ctrl+z
-syncUp 1
+syncUp 2
  
 echo " redo "
 # redo
@@ -172,11 +172,13 @@ echo " Print Preview "
 xdotool key Ctrl+Shift+p # custom
 syncUp 5
 xdotool key Escape
+syncUp 1
 
 echo " Set Bookmark "
 # set Bookmark
 xdotool key Down
 xdotool key Down
+syncUp 2
 xdotool key Ctrl+b
 syncUp 3
 
@@ -185,6 +187,7 @@ echo " Go 5 lines down "
 xdotool key Down
 xdotool key Down
 xdotool key Down
+syncUp 3
 xdotool key Down
 xdotool key Down
 syncUp 3
@@ -203,15 +206,15 @@ xdotool key Down
 xdotool key Down
 xdotool key Down
 xdotool keyup Shift
-syncUp 3
+syncUp 6
 
 echo " Cut "
 # cut
 xdotool key Ctrl+x
 syncUp 5
 
-echo " Standby 30 sec "
-syncUp 30
+echo " Standby 60 sec "
+syncUp 60
 
 echo " Go 5 lines down "
 # go 5 lines down
@@ -231,13 +234,14 @@ syncUp 5
 echo " close "
 # close
 xdotool key Ctrl+w
-syncUp 1
+syncUp 3
 
 echo " Discard the current file "
 # dont save
 xdotool key "Tab"
-syncUp 1
+syncUp 3
 xdotool key Return
+syncUp 5
 		
 echo " Create New file "
 # new file
@@ -248,18 +252,18 @@ echo " Type lorem ipsum "
 # type lorem ipsum
 xdotool type "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
-syncUp 3
+syncUp 10
 
 echo " Enable Spell checking "
 #enable spell checking 
@@ -274,25 +278,27 @@ syncUp 5
 echo " Go to the begining of the line "
 # select to beginning of line
 xdotool key Shift+Home
-syncUp 1
+syncUp 5
 
 echo " Change font "
 #change font 
 xdotool key ctrl+shift+comma
-syncUp 1
+syncUp 3
 xdotool key Tab
 xdotool key Tab
 xdotool key Tab
+syncUp 3
 xdotool key Tab
 xdotool key Return
-syncUp 1
+syncUp 5
 xdotool key ISO_Left_Tab
 xdotool key ISO_Left_Tab
 xdotool key ISO_Left_Tab
+syncUp 3
 xdotool key Down
 xdotool key Down
 xdotool key Return
-syncUp 2
+syncUp 5
 xdotool key ISO_Left_Tab
 xdotool key Return
 syncUp 5
@@ -305,7 +311,7 @@ syncUp 5
 echo " Uppercase "
 # uppercase
 xdotool key Ctrl+u
-syncUp 1
+syncUp 3
 
 echo " Toggle line numbers "
 # toggle line numbers
@@ -317,8 +323,8 @@ echo " lowercase "
 xdotool key Ctrl+semicolon # custom
 syncUp 5
 
-echo " Standby 30 sec "
-syncUp 30
+echo " Standby 60 sec "
+syncUp 60
 
 echo " close "
 # close
@@ -330,6 +336,7 @@ echo " Discard the current file "
 xdotool key "Tab"
 syncUp 1
 xdotool key Return
+syncUp 5
 
 echo "***********Normal User*********** "
 
@@ -342,19 +349,19 @@ echo " Type lorem ipsum "
 # type lorem ipsum
 xdotool type "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
 xdotool key Return
-syncUp 3
+syncUp 5
 
 echo " Increase font size "
 # inc font size
@@ -368,10 +375,10 @@ echo " Type lorem ipsum  "
 # Type lorem ipsum
 xdotool type "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata"
 xdotool key Return
-syncUp 3
+syncUp 5
 
 echo " Decrease font size "
 # dec font size
@@ -394,7 +401,7 @@ xdotool keydown Shift
 xdotool key Down
 xdotool key Down
 xdotool keyup Shift
-syncUp 1
+syncUp 2
 
 echo " Delete "
 # Delete
@@ -438,19 +445,19 @@ echo " Type lorem ipsum "
 # type lorem ipsum
 xdotool type "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet"
 xdotool key Return
-syncUp 3
+syncUp 5
 xdotool type "clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
 xdotool key Return 
-syncUp 3
+syncUp 5
 
 echo " Go to line 1"
 # go to line 100
@@ -465,7 +472,7 @@ xdotool keydown Shift
 xdotool key Down
 xdotool key Down
 xdotool keyup Shift
-syncUp 1
+syncUp 2
 
 echo " Delete "
 # Delete
@@ -481,8 +488,8 @@ xdotool type "clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolo
 xdotool key Return 
 syncUp 3
 
-echo " standby 1 min "
-syncUp 60
+echo " standby 30 sec "
+syncUp 30
 
 echo " close "
 # close
